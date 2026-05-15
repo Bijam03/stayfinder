@@ -11,8 +11,8 @@ const generateToken = (res, userId) => {
   // Store token in a cookie (more secure than localStorage)
   res.cookie("token", token, {
     httpOnly: true,      // JavaScript cannot access this cookie
-    secure: process.env.NODE_ENV === "production", // HTTPS only in production
-    sameSite: "strict",  // Prevents CSRF attacks
+    secure: process.env.NODE_ENV === "production", // Must be true for sameSite: "none"
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", 
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in milliseconds
   });
 

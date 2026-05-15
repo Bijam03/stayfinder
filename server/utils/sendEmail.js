@@ -3,8 +3,8 @@ import nodemailer from "nodemailer";
 // ── Create transporter ONCE (not inside the function) ──
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
+  port: 465,         // Changed from 587
+  secure: true,      // Changed from false
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,

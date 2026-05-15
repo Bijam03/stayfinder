@@ -3,11 +3,11 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
-import authRoutes from "./routes/authRoutes.js"; 
+import authRoutes from "./routes/authRoutes.js";
 import propertyRoutes from "./routes/propertyRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
-import dashboardRoutes from "./routes/dashboardRoutes.js"; 
+import dashboardRoutes from "./routes/dashboardRoutes.js";
 import startReminderJob from './jobs/reminderJob.js';
 import paymentRoutes from "./routes/paymentRoutes.js";
 import adminRoutes from './routes/adminRoutes.js';
@@ -28,8 +28,8 @@ app.use(express.urlencoded({ extended: true })); // Read form data
 app.use(cookieParser());                    // Read cookies
 
 // Allow frontend to talk to backend
-const allowedOrigin = process.env.NODE_ENV === "production" 
-  ? process.env.CLIENT_URL 
+const allowedOrigin = process.env.NODE_ENV === "production"
+  ? process.env.CLIENT_URL
   : "http://localhost:5173";
 
 app.use(
@@ -51,9 +51,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/properties", propertyRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/reviews", reviewRoutes);
-app.use("/api/dashboard", dashboardRoutes); 
+app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/payments", paymentRoutes);
-app.use('/api/admin', adminRoutes); 
+app.use('/api/admin', adminRoutes);
 
 // ─── 404 Handler ──────────────────────────────────────────
 // If someone visits a route that doesn't exist

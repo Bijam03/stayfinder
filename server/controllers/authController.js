@@ -4,8 +4,8 @@ import {
   uploadToCloudinary,
   deleteFromCloudinary,
 } from "../config/cloudinary.js";
-import crypto from "crypto"; 
-import sendEmail from "../utils/sendEmail.js"; 
+import crypto from "crypto";
+import sendEmail from "../utils/sendEmail.js";
 
 // ─── @desc    Register new user
 // ─── @route   POST /api/auth/register

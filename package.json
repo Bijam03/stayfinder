@@ -1,0 +1,18 @@
+{
+  "name": "stayfinder-root",
+  "version": "1.0.0",
+  "description": "StayFinder MERN Stack Project",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm install && npm run build",
+    "render-postbuild": "cd client && npm install && npm run build && cd ../server && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

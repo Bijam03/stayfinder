@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* ── Fix Leaflet map appearing over navbar ── */
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 10 !important;
+}
+
+.leaflet-control {
+  z-index: 10 !important;
+}
+
+/* Make sure navbar stays above map */
+nav {
+  z-index: 50 !important;
+}
+
+
